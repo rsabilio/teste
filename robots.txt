@@ -1,0 +1,23 @@
+#
+# SIMP
+# Descricao: Dicas de indexacao para os robots
+# Autor: Rubens Takiguti Ribeiro
+# Orgao: TecnoLivre - Cooperativa de Tecnologia e Solucoes Livres
+# E-mail: rubens@tecnolivre.com.br
+# Versao: 1.0.0.2
+# Data: 30/01/2008
+# Modificado: 26/04/2011
+# Copyright (C) 2008  Rubens Takiguti Ribeiro
+# License: LICENSE.TXT
+#
+User-agent: *
+Allow: /acessos/       # Formas alternativas de Acesso
+Allow: /imgs/          # Imagens diversas
+Allow: /layout/        # Arquivos de estilos
+Allow: /modulos/       # Modulos do sistema
+Allow: /rdf/           # Arquivos de definicao
+Allow: /webservice/    # Webservice
+Disallow: /arquivos/   # Arquivos privados
+Disallow: /classes/    # Arquivos do sistema
+Disallow: /javascript/ # Arquivos do sistema
+Disallow: /teste/      # Arquivos de teste

@@ -1,0 +1,87 @@
+<?php
+//
+// SIMP
+// Descricao: lista de localidades
+// Autor: Rubens Takiguti Ribeiro
+// Orgao: TecnoLivre - Cooperativa de Tecnologia e Solucoes Livres
+// E-mail: rubens@tecnolivre.com.br
+// Versao: 1.0.0.0
+// Data: 10/01/2011
+// Modificado: 10/01/2011
+// Copyright (C) 2011  Rubens Takiguti Ribeiro
+// License: LICENSE.TXT
+//
+$vetor = array(
+    'Padr&atilde;o' => array('C', 'C'),
+    'Afrikaans' => array('af_ZA', 'Afrikaans_South Africa.1252'),
+    'Albanian' => array('sq_AL', 'Albanian_Albania.1250'),
+    'Arabic' => array('ar_SA', 'Arabic_Saudi Arabia.1256'),
+    'Basque' => array('eu_ES', 'Basque_Spain.1252'),
+    'Belarusian' => array('be_BY', 'Belarusian_Belarus.1251'),
+    'Bosnian' => array('bs_BA', 'Serbian (Latin)'),
+    'Bulgarian' => array('bg_BG', 'Bulgarian_Bulgaria.1251'),
+    'Catalan' => array('ca_ES', 'Catalan_Spain.1252'),
+    'Croatian' => array('hr_HR', 'Croatian_Croatia.1250'),
+    'Chinese (Simplified)' => array('zh_CN', 'Chinese_China.936'),
+    'Chinese (Traditional)' => array('zh_TW', 'Chinese_Taiwan.950'),
+    'Czech' => array('cs_CZ', 'Czech_Czech Republic.1250'),
+    'Danish' => array('da_DK', 'Danish_Denmark.1252'),
+    'Dutch' => array('nl_NL', 'Dutch_Netherlands.1252'),
+    'English' => array('en', 'English_Australia.1252'),
+    'English (US)' => array('en_US', 'English_Australia.1252'),
+    'Estonian' => array('et_EE', 'Estonian_Estonia.1257'),
+    'Farsi' => array('fa_IR', 'Farsi_Iran.1256'),
+    'Filipino' => array('ph_PH', 'Filipino_Philippines.1252'),
+    'Finnish' => array('fi_FI', 'Finnish_Finland.1252'),
+    'French (FR)' => array('fr_FR', 'French_France.1252'),
+    'French (CH)' => array('fr_CH', 'French_France.1252'),
+    'French (BE)' => array('fr_BE', 'French_France.1252'),
+    'French (Canada)' => array('fr_CA', 'French_France.1252'),
+    'Gaelic' => array('ga', 'Gaelic; Scottish Gaelic'),
+    'Gallego' => array('gl_ES', 'Galician_Spain.1252'),
+    'Georgian' => array('ka_GE', 'Georgian_Georgia.65001'),
+    'German' => array('de_DE', 'German_Germany.1252'),
+    'German (Personal)' => array('de_DE', 'German_Germany.1252'),
+    'Greek' => array('el_GR', 'Greek_Greece.1253'),
+    'Gujarati' => array('gu', 'Gujarati_India.0'),
+    'Hebrew' => array('he_IL.utf8', 'Hebrew_Israel.1255'),
+    'Hindi' => array('hi_IN', 'Hindi.65001'),
+    'Hungarian' => array('hu', 'Hungarian_Hungary.1250'),
+    'Icelandic' => array('is_IS', 'Icelandic_Iceland.1252'),
+    'Indonesian' => array('id_ID', 'Indonesian_indonesia.1252'),
+    'Italian' => array('it_IT', 'Italian_Italy.1252'),
+    'Japanese' => array('ja_JP', 'Japanese_Japan.932'),
+    'Kannada' => array('kn_IN', 'Kannada.65001'),
+    'Khmer' => array('km_KH', 'Khmer.65001'),
+    'Korean' => array('ko_KR', 'Korean_Korea.949'),
+    'Lao' => array('lo_LA', 'Lao_Laos.1257'),
+    'Lithuanian' => array('lt_LT', 'Lithuanian_Lithuania.1257'),
+    'Latvian' => array('lat', 'Latvian_Latvia.1257'),
+    'Malayalam' => array('ml_IN', 'Malayalam_India.x-iscii-ma'),
+    'Malaysian' => array('id_ID', 'Indonesian_indonesia.1252'),
+    'Maori (Ngai Tahu)' => array('mi_NZ', 'Maori.1252'),
+    'Maori (Waikoto Uni)' => array('mi_NZ', 'Maori.1252'),
+    'Mongolian' => array('mn', 'Cyrillic_Mongolian.1251'),
+    'Norwegian' => array('no_NO', 'Norwegian_Norway.1252'),
+    'Norwegian (Primary)' => array('no_NO', 'Norwegian_Norway.1252'),
+    'Nynorsk' => array('nn_NO', 'Norwegian-Nynorsk_Norway.1252'),
+    'Polish' => array('pl', 'Polish_Poland.1250'),
+    'Portuguese' => array('pt_PT', 'Portuguese_Portugal.1252'),
+    'Portuguese (Brazil)' => array('pt_BR', 'Portuguese_Brazil.1252'),
+    'Romanian' => array('ro_RO', 'Romanian_Romania.1250'),
+    'Russian' => array('ru_RU', 'Russian_Russia.1251'),
+    'Samoan' => array('mi_NZ', 'Maori.1252'),
+    'Serbian' => array('sr_CS', 'Serbian (Cyrillic)_Serbia and Montenegro.1251'),
+    'Slovak' => array('sk_SK', 'Slovak_Slovakia.1250'),
+    'Slovenian' => array('sl_SI', 'Slovenian_Slovenia.1250'),
+    'Somali' => array('so_SO', false),
+    'Spanish (International)' => array('es_ES', 'Spanish_Spain.1252'),
+    'Swedish' => array('sv_SE', 'Swedish_Sweden.1252'),
+    'Tagalog' => array('tl', false),
+    'Tamil' => array('ta_IN', 'English_Australia.1252'),
+    'Thai' => array('th_TH', 'Thai_Thailand.874'),
+    'Tongan' => array('mi_NZ', 'Maori.1252'),
+    'Turkish' => array('tr_TR', 'Turkish_Turkey.1254'),
+    'Ukrainian' => array('uk_UA', 'Ukrainian_Ukraine.1251'),
+    'Vietnamese' => array('vi_VN', 'Vietnamese_Viet Nam.1258')
+);

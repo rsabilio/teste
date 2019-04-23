@@ -1,0 +1,154 @@
+<?php
+//
+// SIMP
+// Descricao: Classe Configuracao do Sistema
+// Autor: Rubens Takiguti Ribeiro
+// Orgao: TecnoLivre - Cooperativa de Tecnologia e Solucoes Livres
+// E-mail: rubens@tecnolivre.com.br
+// Versao: 1.0.0.19
+// Data: 20/08/2007
+// Modificado: 30/03/2011
+// Copyright (C) 2007  Rubens Takiguti Ribeiro
+// License: LICENSE.TXT
+//
+final class config extends config_base {
+
+    //
+    //     Realiza a validacao final do formulario
+    //
+    public function validacao_final(&$dados) {
+    // Object $dados: dados a serem validados
+    //
+        $r = true;
+
+        switch ($this->id_form) {
+        case $this->id_formulario_alterar('email');
+
+            // Se selecionar SMTP, validar o host e porta
+            if ($this->get_atributo('tipo_email') == CONFIG_EMAIL_SMTP) {
+                $validacao = validacao::get_instancia();
+
+                $erro = '';
+                if (empty($dados->smtp_host)) {
+                    $r = false;
+                    $this->erros[] = 'Faltou preencher o campo Host';
+                } elseif (!$validacao->validar_campo('HOST', $dados->smtp_host, $erro)) {
+                    $r = false;
+                    if ($erro) {
+                        $this->erros[] = "Erro no campo Host (Detalhes: {$erro})";
+                    } else {
+                        $this->erros[] = 'Erro no campo Host';
+                    }
+                }
+
+                if ($dados->smtp_porta <= 0) {
+                    $r = false;
+                    $this->erros[] = 'Porta inv&aacute;lida';
+                }
+            }
+            break;
+        }
+        return $r;
+    }
+
+
+    //
+    //    Imprime um campo do formulario
+    //
+    public function campo_formulario(&$form, $campo, $valor) {
+    // formulario $form: objeto do tipo formulario
+    // String $campo: campo a ser adicionado
+    // Mixed $valor: valor a ser preenchido automaticamente
+    //
+        if ($this->possui_atributo($campo)) {
+            $atributo = $this->get_definicao_atributo($campo);
+        }
+
+        switch ($campo) {
+        case 'formato_data':
+            $form->campo_aviso('Consulte a especifica&ccedil;&atilde;o do <a rel="checar" href="http://pubs.opengroup.org/onlinepubs/007908799/xsh/strftime.html">Open Group</a> de strftime para cria&ccedil;&atilde;o de formatos de data e hora');
+            return parent::campo_formulario($form, $campo, $valor);
+        }
+        return parent::campo_formulario($form, $campo, $valor);
+    }
+
+
+    //
+    //     Retorna um vetor com os tipos de autenticacao
+    //
+    public function get_vetor_autenticacao() {
+        return array_merge(array('simp' => 'Banco de Dados Local'), autenticacao::get_drivers(true));
+    }
+
+
+    //
+    //     Retorna um vetor de niveis de opacidade
+    //
+    public function get_vetor_opaco() {
+        return $this->get_vetor_percentagens();
+    }
+
+
+    //
+    //     Retorna um vetor de niveis de transparencia
+    //
+    public function get_vetor_transparencia() {
+        return $this->get_vetor_percentagens();
+    }
+
+
+    //
+    //     Retorna um vetor com possiveis percentagens
+    //
+    private function get_vetor_percentagens() {
+        $vt_transparencia = array();
+        $vt_transparencia[texto::numero(0.3, 2)] = '30% (Transparente)';
+        for ($i = 0.35; $i <= 1; $i += 0.05) {
+            $vt_transparencia[texto::numero($i, 2)] = texto::numero($i * 100, 0).'%';
+        }
+        $vt_transparencia['1'] = '100% (Opaco)';
+        return $vt_transparencia;
+    }
+
+
+    //
+    //     Retorna um vetor com os possiveis tipos de envio de e-mail
+    //
+    public function get_vetor_tipo_email() {
+        $vetor = array();
+        $vetor[CONFIG_EMAIL_DEVEL] = 'Modo de desenvolvimento (n&atilde;o envia nada)';
+        if (function_exists('mail')) {
+            $vetor[CONFIG_EMAIL_PADRAO] = 'Padr&atilde;o (fun&ccedil;&atilde;o mail do PHP)';
+        }
+        if (function_exists('imap_mail')) {
+            $vetor[CONFIG_EMAIL_IMAP] = 'IMAP (fun&ccedil;&atilde;o imap_mail do PHP)';
+        }
+        $vetor[CONFIG_EMAIL_SMTP] = 'SMTP';
+        return $vetor;
+    }
+
+
+    //
+    //     Retorna um vetor de linguas
+    //
+    public function get_vetor_lingua() {
+        return listas::get_linguas();
+    }
+
+
+    //
+    //     Retorna um vetor de localidades
+    //
+    public function get_vetor_localidade() {
+        return array_flip(listas::get_locales());
+    }
+
+
+    //
+    //     Retorna um vetor de estados
+    //
+    public function get_vetor_estado() {
+        return listas::get_estados();
+    }
+
+}//class
