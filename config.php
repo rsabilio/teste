@@ -10,7 +10,7 @@
 //
 
 // Configuracoes Gerais
-$dominio    = 'localhost'; // Dominio do sistema (Ex: 'teste.com.br')
+$dominio    = 'locahost'; // Dominio do sistema (Ex: 'teste.com.br')
 $path       = '/toy/'; // Path dos cookies (Ex: '/')
 $wwwroot    = 'http://localhost/toy/'; // Endereco raiz (Ex: 'http://www.teste.com.br/simp/')
 $dirroot    = '/home/ramon/git/toy-aluguelCarro/'; // Diretorio raiz (Ex: /var/www/html/simp/)

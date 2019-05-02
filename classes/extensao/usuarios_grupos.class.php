@@ -12,5 +12,5 @@
 // License: LICENSE.TXT
 //
 final class usuarios_grupos extends usuarios_grupos_base {
-
+    
 }//class

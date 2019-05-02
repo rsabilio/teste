@@ -15,7 +15,7 @@
 // Constantes
 define('VALIDACAO_CHARSET',               strtolower($CFG->charset));
 define('VALIDACAO_UTF8',                  $CFG->utf8);
-define('VALIDACAO_CHECAR_DOMINIO_EMAIL',  true);  // Disponivel para Windows a partir do PHP 5.3
+define('VALIDACAO_CHECAR_DOMINIO_EMAIL',  false);  // Disponivel para Windows a partir do PHP 5.3
 define('VALIDACAO_TIPO_CHECAGEM_DOMINIO', 'MX');  // Usado no parametro $type da funcao checkdnsrr
 
 final class validacao {

@@ -25,9 +25,10 @@ function instalar_grupo(&$erros) {
         return true;
     }
 
-    $grupos = array('Administradores');
+    $grupos = array('Administradores', 'Funcionários', 'Clientes', 'Manutenção');
 
     foreach ($grupos as $grupo) {
+        echo "grupo: $grupo\n";
         $r = $r && inserir_grupo($grupo, $erros);
     }
 
