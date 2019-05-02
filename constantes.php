@@ -13,9 +13,9 @@
 //
 
 /// VARIAVEIS
-define('SISTEMA',         'simp');  // Nome do sistema
+define('SISTEMA',         'AlugaCar');  // Nome do sistema
 define('VERSAO_SISTEMA',  '1.0');   // Versao do sistema
-define('ANO_INICIO',      2007);    // Ano de inicio do sistema
+define('ANO_INICIO',      2019);    // Ano de inicio do sistema
 define('DEVEL_BLOQUEADO', false);   // Situacao do modulo Devel
 
 
@@ -44,6 +44,9 @@ $vt_temas = array(
 
 // GERAIS
 define('COD_ADMIN', 1);
+define('COD_FUNCIONARIO', 2);
+define('COD_CLIENTE', 3);
+define('COD_MANUTENCAO', 4);
 
 
 /// CONSTANTES
